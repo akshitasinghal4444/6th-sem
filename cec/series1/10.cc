@@ -1,8 +1,9 @@
 /*
-first n natural no.s
+1^1 + 2^2 + 3^3 + 4^4 + ... n terms
 */
 
 #include<iostream>
+#include<math.h>
 using namespace std;
 
 void print(int n)
@@ -11,7 +12,7 @@ void print(int n)
     return;
 
     print(n-1);
-    cout<<n<<" ";
+    cout<<n<<"^"<<n<<" + ";
 }
 
 int main()
