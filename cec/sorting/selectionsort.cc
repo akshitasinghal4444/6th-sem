@@ -1,18 +1,18 @@
 #include<iostream>
 using namespace std;
 
-void bubble_sort(int *a,int n)
+void selection_sort(int *a,int n)
 {
     int i,j;
-    for(i=0;i<n;i++)
+    for(i=0;i<n-1;i++)
     {
-        for(j=0;j<n-1-i;j++)
+        for(j=i+1;j<n;j++)
         {
-            if(a[j]>a[j+1])
+            if(a[i]>a[j])
             {
                 int t=a[j];
-                a[j]=a[j+1];
-                a[j+1]=t;
+                a[j]=a[i];
+                a[i]=t;
             }
         }
     }
@@ -28,10 +28,12 @@ int main()
     for(i=0;i<n;i++)
     cin>>a[i];
 
-    bubble_sort(a,n);
+    selection_sort(a,n);
+
 
     for(i=0;i<n;i++)
     cout<<a[i]<<" ";
+
 
     return 0;
 }

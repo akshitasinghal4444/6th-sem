@@ -1,20 +1,21 @@
 #include<iostream>
 using namespace std;
 
-void bubble_sort(int *a,int n)
+void insertion_sort(int *a,int n)
 {
     int i,j;
-    for(i=0;i<n;i++)
+    for(i=1;i<n;i++)
     {
-        for(j=0;j<n-1-i;j++)
+        int k=a[i];
+        j=i-1;
+
+        while(j>=0 && a[j]>k)
         {
-            if(a[j]>a[j+1])
-            {
-                int t=a[j];
-                a[j]=a[j+1];
-                a[j+1]=t;
-            }
+            a[j+1]=a[j];
+            j--;
         }
+        
+        a[j+1]=k;
     }
 }
 
@@ -28,10 +29,12 @@ int main()
     for(i=0;i<n;i++)
     cin>>a[i];
 
-    bubble_sort(a,n);
+    insertion_sort(a,n);
+
 
     for(i=0;i<n;i++)
     cout<<a[i]<<" ";
+
 
     return 0;
 }

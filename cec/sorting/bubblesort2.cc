@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-void bubble_sort(int *a,int n)
+void bubble_sort(int *a,int n,int k)
 {
     int i,j;
     for(i=0;i<n;i++)
@@ -15,23 +15,25 @@ void bubble_sort(int *a,int n)
                 a[j+1]=t;
             }
         }
+        if(i==k-1)
+        {
+            for(j=0;j<n;j++)
+            cout<<a[j]<<" ";
+        }
     }
 }
 
 int main()
 {
-    int n;
-    cin>>n;
+    int n,k;
+    cin>>n>>k;
 
     int a[n];
     int i;
     for(i=0;i<n;i++)
     cin>>a[i];
 
-    bubble_sort(a,n);
-
-    for(i=0;i<n;i++)
-    cout<<a[i]<<" ";
+    bubble_sort(a,n,k);
 
     return 0;
 }
